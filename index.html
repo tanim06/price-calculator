@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+   <title>Calculator</title>
+
+</head>
+
+<!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<body>
+
+<table>
+
+<caption class="display-4">Price Calculator</caption>
+
+<tr>
+
+<th>Price </th>
+
+<td><input class="form-control" type="text" id="price"placeholder="Enter price" </td>
+
+</tr>
+
+<tr>
+
+<th>Percentage </th>
+
+<td><input  class="form-control"type="text" id="percent"placeholder="Enter percentage" </td>
+
+</tr>
+
+<tr>
+
+<th>Quantity </th>
+
+<td><input  class="form-control" type="text" id="quantity"placeholder="Enter quantity" </td>
+
+</tr>
+
+<tr>
+
+<td><input  class="btn btn-danger"type="submit" id="submit"> </td>
+
+<th id="total" </th>
+
+</tr>
+
+<tr>
+
+  <td><br><input class="btn btn-primary" type="button" value="Reset" id="reset"></td>
+
+</tr>
+
+</table>
+
+<script>
+
+var price = document.getElementById("price");
+
+var percent = document.getElementById("percent")
+
+var quantity = document.getElementById("quantity")
+
+var submit = document.getElementById("submit");
+
+var total = document.getElementById("total")
+
+var reset = document.getElementById("reset")
+
+quantity.value = 108;
+
+function cal (){
+
+ 
+
+}
+
+cal();
+
+submit.addEventListener("click" , () =>{
+
+     percentValue = Number(percent.value)
+
+     quantityValue = Number(quantity.value)
+
+     priceValue = Number(price.value)
+
+     
+
+     total.innerHTML= 0
+
+  discount =  priceValue - ((priceValue* percentValue  )/100)
+
+  t = Number(discount/ quantityValue).toFixed(2);
+
+     total.innerHTML = t
+
+     
+
+     console.log(percentValue , quantityValue , priceValue)
+
+});
+
+reset.addEventListener("click" ,()=>{
+
+   price.value = ' '
+
+  
+
+})
+
+</script>
+
+</body>
+
+</html>
